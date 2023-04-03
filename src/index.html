@@ -7,53 +7,6 @@
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
 </head>
-  <style>
-    <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
-<style>
-table.GeneratedTable {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-width: 2px;
-  border-color: #ffcc00;
-  border-style: solid;
-  color: #000000;
-}
-
-table.GeneratedTable td, table.GeneratedTable th {
-  border-width: 2px;
-  border-color: #ffcc00;
-  border-style: solid;
-  padding: 3px;
-}
-
-table.GeneratedTable thead {
-  background-color: #ffcc00;
-}
-<!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
-<style>
-table.GeneratedTable {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-width: 2px;
-  border-color: #ffcc00;
-  border-style: solid;
-  color: #000000;
-}
-
-table.GeneratedTable td, table.GeneratedTable th {
-  border-width: 2px;
-  border-color: #ffcc00;
-  border-style: solid;
-  padding: 3px;
-}
-
-table.GeneratedTable thead {
-  background-color: #ffcc00;
-}
-</style>
-
 <body>
   <main>
   <h1>Static Web Apps Database Connections</h1>
@@ -61,26 +14,26 @@ table.GeneratedTable thead {
     Open the console in the browser developer tools to see the API responses.
 </blockquote>
 <div>
- <table class="tg">
+ <table style="border:1">
 <thead>
-     <tr>
+    <tr>
     <td class="tg-0lax">Description</td><td class="tg-0lax">Data operation</td>
   </tr>
 </thead>
     <tr>
-    <td class="tg-0lax"></td><td class="tg-0lax"><button id="list" onclick="list()">List</button></td>
+    <td class="tg-0lax"></td>List all the records<td class="tg-0lax"><button id="list" onclick="list()">List</button></td>
   </tr>
    <tr>
-    <td class="tg-0lax"></td><td class="tg-0lax"> <button id="get" onclick="get()">Get</button></td>
+    <td class="tg-0lax"></td>Get all the records<td class="tg-0lax"> <button id="get" onclick="get()">Get</button></td>
   </tr>
    <tr>
-    <td class="tg-0lax"></td><td class="tg-0lax"><button id="update" onclick="update()">Update</button></td>
+    <td class="tg-0lax"></td>Update name of record id 1 <td class="tg-0lax"><button id="update" onclick="update()">Update</button></td>
   </tr>
    <tr>
-    <td class="tg-0lax"></td><td class="tg-0lax"><button id="create" onclick="create()">Create</button></td>
+    <td class="tg-0lax"></td>Create a new record<td class="tg-0lax"><button id="create" onclick="create()">Create</button></td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td><td class="tg-0lax"><button id="delete" onclick="del()">Delete</button></td>
+    <td class="tg-0lax"></td>Delete record 3 <td class="tg-0lax"><button id="delete" onclick="del()">Delete</button></td>
   </tr>
 </table>  
     
@@ -115,6 +68,7 @@ async function update() {
   });
   const result = await response.json();
   console.table(result.value);
+  <div> result.value</div>
 }
 async function create() {
 
@@ -130,7 +84,7 @@ async function create() {
   });
   const result = await response.json();
   console.table(result.value);
-}
+ }
 async function del() {
   const id = 3;
   const endpoint = '/data-api/rest/Person/Id';
